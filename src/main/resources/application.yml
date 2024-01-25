@@ -3,10 +3,13 @@ spring:
     username: DB_아이디
     password: DB_패스워드
   jpa:    database: postgresql
+  redis:    host: 127.0.0.1
+    port: 6379
   session:
-    store-type: jdbc
-    jdbc:
-      table-name: OAUTH.SPRING_SESSION
+    store-type: redis
+#    store-type: jdbc
+#    jdbc:
+#      table-name: OAUTH.SPRING_SESSION
   security:    oauth2:      client:        registration:          naver:
             client-id: 클라이언트_아이디
             client-secret: 클라이언트_시크릿
